@@ -31,3 +31,7 @@ Export Full list and safe.
     PrintCollectionFull
     PrintCollectionSafe
 
+
+## Options:
+Exporting collections make use of the TimerInterval on Vp objects to specify the number for the sw, lamp, coil, etc.
+If you have a lamp called "shootAgain" you would add the number of this lamp into the TimerInterval box.
