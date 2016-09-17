@@ -140,7 +140,11 @@ Function  PrintCollectionYaml(ByVal tableName, ByVal prType, ByVal collection)
 
 		dim item
 		For each item in collection:
-			str = str & Tab & item.Name & ":" & vbCrLf & Tab & Tab & numPrefix & item.timerinterval	& vbCrLf		
+			str = str & Tab & item.Name & ":" & vbCrLf & Tab & Tab & numPrefix & item.timerinterval	& vbCrLf
+			
+			If StrComp(prType, "PRlamps", vbTextCompare) = 1 Then
+				str = str & Tab & Tab & ballsearch & vbCrLf
+			End If		
 		next	
 
 		oFile.Write(str & vbCrLf)
