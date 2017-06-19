@@ -32,6 +32,7 @@ Export to a basic config for use in LedShowEditor.
 Export Full list and safe.
 
 Printing a full collection is a json with the name, interval number, x & y coordinates of VP.
+
     PrintCollectionFull "MyTableName", "PRLamps", Lamps
     PrintCollectionSafe "MyTableName", "PRLamps", Lamps
 
