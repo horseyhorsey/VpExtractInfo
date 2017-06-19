@@ -4,15 +4,18 @@ Visual basic script to extract Visual pinball collections to JSon, yaml or LEd c
 ##How to use
 Place the VpExtractInfo.vbs in your Visual Pinball scripts folder.
 
+Exporting collections make use of the TimerInterval on Vp objects to specify the number for the sw, lamp, coil, etc.
+If you have a lamp called "shootAgain" you would add the number of this lamp into the TimerInterval box.
+
 To be able to call the functions add the following to a VP script.
 
-		Option Explicit
-		Randomize
+	Option Explicit
+	Randomize
 
-		On Error Resume Next
-		ExecuteGlobal GetTextFile("VpExtractInfo.vbs")
-		If Err Then MsgBox "Can't open VpExtractInfo.vbs"
-		On Error Goto 0
+	On Error Resume Next
+	ExecuteGlobal GetTextFile("VpExtractInfo.vbs")
+	If Err Then MsgBox "Can't open VpExtractInfo.vbs"
+	On Error Goto 0
 
 Export to yaml for p-roc passing in your table name, PR type, and VP collection name.
 
@@ -28,10 +31,7 @@ Export to a basic config for use in LedShowEditor.
 
 Export Full list and safe.
 
-    PrintCollectionFull
-    PrintCollectionSafe
+    PrintCollectionFull "MyTableName", "PRLamps", Lamps
+    PrintCollectionSafe "MyTableName", "PRLamps", Lamps
 
 
-## Options:
-Exporting collections make use of the TimerInterval on Vp objects to specify the number for the sw, lamp, coil, etc.
-If you have a lamp called "shootAgain" you would add the number of this lamp into the TimerInterval box.
